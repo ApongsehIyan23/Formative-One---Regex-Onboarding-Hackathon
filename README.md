@@ -39,5 +39,3 @@ I used re.finditer because it allows the program to scan a single line and find 
 3. Privacy & Masking
 For the Credit Card module, I implemented PII (Personally Identifiable Information) masking. Using regex capturing groups, the script identifies the full number but replaces the middle 8 digits with stars before saving. This ensures that even if the output file is stolen, the sensitive financial data remains protected.
 
-Sample Console Output
-If the program encounters an attack or a logic error (like a time of 25:00), it will log a warning to the console: [SECURITY ALERT] Blocked threat/invalid data: victim@test.com
