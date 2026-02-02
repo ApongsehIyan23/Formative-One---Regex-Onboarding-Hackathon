@@ -26,3 +26,15 @@ $1,000.00; DROP TABLE users;--
 
 This line is just a sentence that should not match any regex.
 The total cost was $50.00 
+
+SENT: Monday, Feb 2, 2026. From: jolie.engineering@uky.edu. Subject: Logistics Update.
+The technician (ID: 882) is available at 09:15 to discuss the Cameroon site.
+Please reach out to the local lead at +237 677-123-456 if the gate is locked.
+Note: A payment of $1,250.00 was authorized by the department head.
+The corporate card ending in 4111-2222-3333-4444 has been charged for the parts.
+
+--- SECURITY SYSTEM LOGS ---
+ALERT: Suspicious login attempt detected from <script>alert('XSS')</script> at 23:59.
+WARNING: Failed transaction attempt of $-50.00 (Negative Value Blocked).
+LOG: User updated email to victim@test.com\nBcc:hacker@spam.com to test injection.
+LOG: Automated ping sent to +237 000-000-000; DROP TABLE users;-- at 12:00.
