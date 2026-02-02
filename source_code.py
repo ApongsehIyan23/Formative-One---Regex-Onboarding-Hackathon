@@ -44,7 +44,7 @@ for line in lines:
             break # Move to next line once we find a match
 
 # 4. SAVE TO JSON
-with open('output.json', 'w') as f:
+with open('sample_output.json', 'w') as f:
     json.dump(extracted_results, f, indent=4)
 
-print("Mission Accomplished! Your secured data is in output.json")
+print("Mission Accomplished! Your secured data is in sample_output.json")
