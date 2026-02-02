@@ -1,0 +1,20 @@
+{
+    "email": [
+        "jolie.engineering@uky.edu",
+        "j.smith@sub.example.org"
+    ],
+    "phone": [
+        "+237 677-123-456",
+        "+237 222-444-555"
+    ],
+    "credit_card": [
+        "4111-****-****-4444"
+    ],
+    "time": [
+        "14:30"
+    ],
+    "currency": [
+        "$1,250.00",
+        "$99.99"
+    ]
+}
