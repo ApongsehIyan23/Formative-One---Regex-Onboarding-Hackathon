@@ -30,7 +30,7 @@ The total cost was $50.00
 SENT: Monday, Feb 2, 2026. From: jolie.engineering@uky.edu. Subject: Logistics Update.
 The technician (ID: 882) is available at 09:15 to discuss the Cameroon site.
 Please reach out to the local lead at +237 677-123-456 if the gate is locked.
-Note: A payment of $1,250.00 was authorized by the department head.
+Note: A payment of $1,250<script>.00 was authorized by the department head.
 The corporate card ending in 4111-2222-3333-4444 has been charged for the parts.
 
 --- SECURITY SYSTEM LOGS ---
