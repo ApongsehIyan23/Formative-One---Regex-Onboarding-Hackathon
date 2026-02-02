@@ -39,3 +39,55 @@ I used re.finditer because it allows the program to scan a single line and find 
 3. Privacy & Masking
 For the Credit Card module, I implemented PII (Personally Identifiable Information) masking. Using regex capturing groups, the script identifies the full number but replaces the middle 8 digits with stars before saving. This ensures that even if the output file is stolen, the sensitive financial data remains protected.
 
+
+
+
+Regex Pattern Breakdown
+To keep the system secure, I used specific regex "formulas" for each data type. Here is the logic for each:
+
+1. Email
+r"\w[\w.-]{0,63}@[\w.-]{1,192}\.[a-zA-Z]{2,63}"
+
+The Logic: It starts with a word character, allows dots and hyphens in the name and domain, and requires a TLD (like .com or .edu) that is at least 2 characters long.
+
+
+2. Cameroonian Phone Number
+r"\+237\s[623]\d{2}-\d{3}-\d{3}"
+
+The Logic: This follows the specific format for Cameroon. It must start with the +237 country code and a space.
+
+Service Codes: The first digit of the number must be a 6 (Mobile), 2 (Fixed line), or 3 (Nexttel/Fixed). This prevents fake numbers from being collected.
+
+3. Credit Card (with Masking)
+r"(\d{4})-\d{4}-\d{4}-(\d{4})"
+
+The Logic: It looks for four groups of four digits separated by hyphens.
+
+Capturing Groups: I wrapped the first (\d{4}) and last (\d{4}) in parentheses. This allows the program to "remember" those specific numbers while replacing the middle ones with **** during the masking phase.
+
+4. 24-Hour Time
+r"([01]\d|2[0-3]):[0-5]\d\S*"
+
+The Logic: This uses "Alternation" logic.
+
+[01]\d handles hours from 00 to 19.
+
+2[0-3] handles hours from 20 to 23.
+
+Security: This pattern makes it mathematically impossible to match a time like 25:70.
+
+5. Currency (USD)
+r"\$\d{1,3}(,\d{3})*\.\d{2}"
+
+The Logic: * \d{1,3} handles the first one-to-three digits.
+
+(,\d{3})* handles thousands separators (commas followed by exactly three digits).
+
+\.\d{2} requires exactly two decimal places for cents.
+
+Security Considerations
+The primary threat this program defends against is Injection Attacks.
+
+XSS (Cross-Site Scripting): By searching for < and > in the extracted data, we ensure that a hacker cannot hide an executable script inside a data field.
+
+Log/Header Injection: The check for \n (newlines) prevents an attacker from "splitting" a line of data to inject fake log entries or unauthorized commands into a server.
